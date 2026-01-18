@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.clock-container {
+    background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(102, 126, 234, 0.2);
+    width: 100%;
+    max-width: 600px;
+    border: 3px solid #667eea;
+}
+
+.clock-title {
+    text-align: center;
+    color: #00d4ff;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    letter-spacing: 3px;
+}
+
+.controls-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.control-group {
+    text-align: center;
+}
+
+.control-group label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.control-group .length-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00ff00;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.control-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.control-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.control-button:active {
+    transform: translateY(0);
+}
+
+/* Timer Display */
+.timer-display {
+    background: #1a1a2e;
+    border: 4px solid #00ff00;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.2);
+}
+
+#timer-label {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00d4ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+#time-left {
+    font-size: 80px;
+    font-weight: bold;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    letter-spacing: 5px;
+}
+
+@media (max-width: 768px) {
+    #time-left {
+        font-size: 60px;
+    }
+}
+
+/* Control Buttons */
+.timer-controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.timer-button {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    min-width: 120px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timer-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+}
+
+.timer-button:active {
+    transform: translateY(-1px);
+}
+
+#reset {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+#reset:hover {
+    background: linear-gradient(135deg, #ff8888 0%, #f57a8c 100%);
+}
+
+#start_stop {
+    background: linear-gradient(135deg, #06d6a0 0%, #118ab2 100%);
+    min-width: 150px;
+}
+
+#start_stop:hover {
+    background: linear-gradient(135deg, #26e8b8 0%, #2fa5c8 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .clock-container {
+        padding: 20px;
+        border-width: 2px;
+    }
+
+    .clock-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .controls-wrapper {
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .control-group label {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .control-group .length-display {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .control-button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .timer-display {
+        padding: 20px;
+        margin-bottom: 20px;
+        border-width: 3px;
+    }
+
+    #timer-label {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    #time-left {
+        font-size: 48px;
+        letter-spacing: 3px;
+    }
+
+    .timer-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-width: 90px;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Pulsing effect when timer is running */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(0, 255, 0, 0.5);
+    }
+}
+
+.timer-display.running {
+    animation: pulse 2s infinite;
+}
